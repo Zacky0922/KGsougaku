@@ -3,96 +3,259 @@
 <html lang="ja">
 
 <head>
-	<!-- meta設定 -->
-	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
-	<meta http-equiv="Content-Script-Type" content="text/javascript" charset="UTF-8" />
-	<meta http-equiv="Content-Style-Type" content="text/ccs" charset="UTF-8" />
-	<meta name="robots" content="noindex,nofollow" />
+    <!-- meta設定 -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript" charset="UTF-8" />
+    <meta http-equiv="Content-Style-Type" content="text/ccs" charset="UTF-8" />
+    <meta name="robots" content="noindex,nofollow" />
 
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-163335381-1"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag() { dataLayer.push(arguments); }
-		gtag('js', new Date());
-		gtag('config', 'UA-163335381-1');
-	</script>
+    <!-- master -->
+    <script type="module" src="./script/script.js"></script>
+    <link rel="stylesheet" href="./script/style.css">
+    <!-- ここに本文を記述します -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <style>
+        h3 {
+            text-align: center;
+            margin: 3em 0;
+        }
 
-	<!-- PWA設定 -->
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        h4 {
+            margin-top: 3em;
+            border: 1px dashed #f00;
+        }
 
-	<!-- JS/CSS master -->
-	<script src="https://code.jquery.com/jquery-3.5.1.js"
-		integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-	<script type="text/javascript" src="./importer.js" type="module"></script>
-	<link rel="stylesheet" type="text/css" href="../../exScripts/master.css" />
+        h5 {
+            margin-top: 2em;
+            border-bottom:3px dashed #f88;
+        }
 
-	<script>
-
-	</script>
-	<style>
-
-	</style>
-	<title>INDEX</title>
+        table tr * {
+            border: 1px solid #000;
+        }
+    </style>
+    <title>INDEX</title>
 </head>
 
 <body>
-	<div class="container">
-		<section style="grid-area:notice">
-			<h2 class="zHead">WEBサイトを作ろう！</h2>
-			<dl class="zList">
-				<dt><a href="start.html">はじめに</a></dt>
-				<dd>タグとはなにか？ - html,head,bodyタグ</dd>
-				<dt>文字の表示と装飾</dt>
-				<dd>p,div,span,brタグ と style要素</dd>
-				<dt><a href="table.html">表の表示</a></dt>
-				<dd>tableタグ</dd>
-				<dt>画像の表示</dt>
-				<dd>imgタグ</dd>
-				<dt><a href="style.html">style要素について</a></dt>
-				<dd>文字（色・サイズ・太さ）,背景（色）,枠線(色・太さ)</dd>
-				<dt>外部スタイルシートとclass</dt>
-				<dd>styleの一括指定</dd>
-			</dl>
-			<h3 class="zHead">ファイルの保存について</h3>
-			<ul class="zList">
-				<li>デスクトップで、「新規作成 ＞ テキスト ドキュメント」を選択</li>
-				<li>内容を記載</li>
-				<li>「名前を付けて保存」のとき、ファイル名の末尾を「～～.html」にする。</li>
-				<li>PCではなく、USBメモリへの保存を忘れずに。</li>
-			</ul>
-		</section>
+    <!-- menu -->
+    <script type="module">
+        import { setBSnavbar } from "./script/script.js";
+        setBSnavbar();
+    </script>
 
-		<section style="grid-area:links">
-			<h2 class="zHead">Links</h2>
-			<p style="text-align:right">※クリックで展開</p>
-			<div>
-				<h3 class="zHead"><label for="学校関係" class="zClickable">◆学校関係◆</label></h3>
-				<input type="checkbox" class="zDispControl" id="学校関係" />
-				<div style="grid-area:links;display:grid;">
-					<a class="zBtn" target="_blank" href="https://jsh.kgef.ac.jp/kg/">学校サイト</a>
-					<a class="zBtn" target="_blank" href="https://jsh.kgef.ac.jp/news/14196/">KGコロナまとめ</a>
-					<a class="zBtn" target="_blank" href="https://jsh.kgef.ac.jp/schoolbus/">スクールバス</a>
-				</div>
-				<h3 class="zHead"><label for="参考リンク" class="zClickable">◆参考リンク◆</label></h3>
-				<input type="checkbox" class="zDispControl" id="参考リンク" />
-				<div style="grid-area:links;display:grid;">
-					<a class="zBtn" target="_blank" href="http://www.htmq.com/">HTMLクイックリファレンス</a>
-					<a class="zBtn" target="_blank" href="https://codepen.io/">CodePen</a>
-				</div>
-			</div>
-		</section>
+    <section class="container">
+        <section class="row">
+            <section class="col zTitle">
+                WEBサイトを作ろう - KG総学
+            </section>
+        </section>
+        <section class="row">
+            <section class="col-lg-3 order-lg-1">
+                <div class="box" style="position: sticky;top:0;">
+                    <div id="activeMenu">
+                        <h3 class="noList">MENU</h3>
+                    </div>
+                    <script type="module">
+                        import { activeMenu } from "./script/activeMenu.js";
+                        new activeMenu("activeMenu");
+                    </script>
+                </div>
+            </section>
+            <section class="col-lg-9 order-lg-0">
+                <div class="box">
+                    <h3>HTMLの基本</h3>
+                    HTML＝Hyper Text Markup Language（ハイパー・テキスト・マークアップ・ランゲージ）とは、文章をマークアップ（＝タグで囲うこと）して機能を持たせる、ウェブサイトの表示に適した形式の文章のことです。
+                    <h4>テキストの表示</h4>
+                    テキストには、大きく分けてブロック要素・インライン要素の2種類があります。<br />
+                    段落のような改行を伴う塊を作る場合はブロック要素、改行せず行内の一部を指定する場合はインライン要素を使用しましょう。
+                    <h5>ブロック要素</h5>
+                    <dl>
+                        <dt>pタグ</dt>
+                        <dd>段落(paragraph)を表す。</dd>
+                        <dt>divタグ</dt>
+                        <dd>分割された区間（division）を表す。</dd>
+                    </dl>
+                    <h5>インライン要素</h5>
+                    <dl>
+                        <dt>spanタグ</dt>
+                        <dd>テキストの一部を装飾するときに用いる。</dd>
+                        <dt>aタグ</dt>
+                        <dd>テキストにリンク等の機能を持たせるときに用いる。
+                            <pre class="prettyprint lang-html">
+&lt;a href="リンク先URL" target="リンクの方法"&gt;表示するテキスト&lt;/a&gt;
+                            </pre>
+                        </dd>
+                    </dl>
+                    <h4>表の表示</h4>
+                    表は、大きく次の3要素で成り立っています。
+                    <ul>
+                        <li>表の大枠 tableタグ</li>
+                        <li>行 trタグ</li>
+                        <li>セル（マス目） tdタグ</li>
+                    </ul>
+                    この3つを意識して、書きましょう。
+                    <pre class="prettyprint lang-html">
+&lt;table&gt;
+    &lt;tr&gt;
+        &lt;td&gt;
+            A
+        &lt;/td&gt;
+        &lt;td&gt;
+            B
+        &lt;/td&gt;
+        &lt;td&gt;
+            C
+        &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;
+            D
+        &lt;/td&gt;
+        &lt;td colspan="2"&gt;
+            ここは2つ合体する
+        &lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</pre>
+                    <table>
+                        <tr>
+                            <td>A</td>
+                            <td>B</td>
+                            <td>C</td>
+                        </tr>
+                        <tr>
+                            <td>D</td>
+                            <td colspan="2">ここは2つ合体する</td>
+                        </tr>
+                    </table>
+                </div>
+                    <pre class="prettyprint lang-html">
+&lt;span id="id0" class="class0"&gt;テキスト&lt;/span&gt;</pre>
 
-		<section style="grid-area:ft">
-			<p>本ページをブックマークすると便利だと思います。</p>
+                <h4>CSSの準備（IDとクラス）</h4>
+                要素に「固有の名称＝ID」や、「グループの名称＝クラス」を設定することができます。<br/>
+                CSSで装飾を設定する際に、まとめて設定するときに便利です。<br/>
+                同じIDは、1つのページ内に1つしか設定することができませんが、クラスは複数設定することができます。
 
-		</section>
-		<section id="debugArea" style="grid-area:debugArea">
+                <div class="box">
+                    <h3>CSSの基本</h3>
+                    CSS＝Cascading Style Sheets（カスケーディング・スタイル・シート）とは、HTMLで記載された文章を装飾するための命令のことです。
+                    <h4>指定の方法</h4>
+                    原則、「適用対象{ 項目：内容; }」の形式で指定します。<br/>
+                    また、指定を書く方法は、大きく3種類あります。
+                    <h5>直接指定する</h5>
+                    個別に指定したい場合に利用します。
+                    <pre class="prettyprint lang-html">
+&lt;p&gt;
+みなさんこんにちは。私の名前は&lt;span style="color:#f00;"&gt;国際太郎&lt;/span&gt;です。
+&lt;/p&gt;</pre>
+                    <p style="border:1px solid #000;">みなさんこんにちは。私の名前は<span style="color:#f00;">国際太郎</span>です。</p>
+                    <h5>まとめて指定（ページ内で）</h5>
+                    ページ内全体に適用したい場合に利用します。<br/>
+                    同一の要素に対し、複数の指定がある場合は、「より細かく指定した」ものが適用されます。
+                    <pre class="prettyprint lang-html">
+&lt;style&gt;
+span{
+    color: #f00;
+    font-size: large;
+}
+span.blue{
+    color: #00f;
+}
+&lt;/style&gt;
+&lt;p&gt;
+&lt;span&gt;今日の天気は
+&lt;span class="blue"&gt;雨&lt;/span&gt;
+です。
+&lt;/span&gt;
+&lt;/p&gt;
+</pre>
+<style>
+#test_ame span{
+    color: #f00;
+    font-size: large;
+}
+#test_ame span.blue{
+    color: #00f;
+}
+</style>
+<p style="border:#000 1px solid" id="test_ame">
+    <span>今日の天気は<span class="blue">雨</span>です。</span>
+</p>
 
+                    <h5>まとめて指定（ページ外で）</h5>
+                    複数のページに適用したい場合に利用します。<br/>
+                    HTMLファイルとは別に、CSS（～～.css）ファイルを用意し、その中で設定します。
+                    <pre class="prettyprint lang-html">
+&lt;html&gt;
+&lt;head&gt;
+&lt;link rel="stylesheet" href="CSSファイルのURL"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+（本文）
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+                </div>
+                <div class="box">
+                    <h4>代表的な装飾</h4>
+                    <h5>位置設定系</h5>
+                    <dl>
+                        <dt>margin</dt>
+                        <dd>要素外部の余白設定です。<br />指定する数値の数によって、余白を指定する位置を変更できます。
+                            <ul>
+                                <li>margin: [上下左右];</li>
+                                <li>margin: [上下] [左右];</li>
+                                <li>margin: [上] [左右] [下];</li>
+                                <li>margin: [上] [下] [左] [右];</li>
+                            </ul>
+                        </dd>
+                        <dt>padding</dt>
+                        <dd>要素内部の余白設定です。<br />指定する数値の数によって、余白を指定する位置を変更できます。<br />（marginと同様）</dd>
+                    </dl>
+                    <h5>フォント・罫線</h5>
+                    <dl>
+                        <dt>color</dt>
+                        <dd>文字色を設定できます。</dd>
+                        <dt>font-size</dt>
+                        <dd>文字の大きさを指定します。<br/>
+                        数値の他に、「xx-small、x-small、small、medium、large、x-large、xx-large」などが指定できます。</dd>
+                        <dt>border</dt>
+                        <dd>罫線についての設定です。<br/>
+                            太さ、種類、色の3つを指定します。（順序は自由）
+                            <div>
+                                <span style="border:1px solid #f00;">border:1px solid #f00;</span>
+                                <span style="border:5px dashed blue;">border:5px dashed blue;</span>
+                                <span style="border:3px dotted rgb(0,255,0);">border:3px dotted rgb(0,255,0);</span>
+                            </div>
+                        </dd>
+                        <dt></dt>
+                        <dd></dd>
+                        <dt></dt>
+                        <dd></dd>
+                    </dl>
+                </div>
+                <div class="box">
+                    <h3>参考リンク集</h3>
+                    <ul>
+                        <li><a href="https://zacky0922.github.io/KGsougaku/" target="_blank">古い方の総学サイト</a></li>
+                        <li><a href="http://www.htmq.com/" target="_blank">HTMLクイックリファレンス</a></li>
+                    </ul>
+                </div>
+            </section>
+        </section>
+    </section>
 
-		</section>
-	</div><!-- /container -->
 </body>
 
 </html>

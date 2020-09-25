@@ -1,0 +1,13 @@
+@import "./activeMenu.css";
+
+.navbar .navbar-text{
+    margin-right:10px;
+}
+.navbar .navbar-nav > *{
+    font-size:small;
+}
+*{
+}
+.zTitle{
+    background:#bbb;
+}
