@@ -1,3 +1,5 @@
+
+
 ol.activeMenu,ol.activeMenu ol{
     padding-left:2em;
 }
@@ -5,8 +7,24 @@ ol.activeMenu ol{
     padding-left:0.5em;
 }
 ol.activeMenu li.current{
-    background:#fcc;
+    border:1px dashed #f00;
 }
 ol.activeMenu li:hover{
-    background:#fee;
+    
 }
+
+
+ol.activeMenu li {
+    list-style: none;
+}
+/* カウンタ番号 */
+/*
+ol.activeMenu {
+    counter-reset: section;
+}
+ol.activeMenu > li::before {
+    content : counters(section, ".") " ";
+    counter-increment : section;
+}
+*/
+

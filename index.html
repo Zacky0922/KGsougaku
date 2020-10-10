@@ -38,7 +38,7 @@
 
         h5 {
             margin-top: 2em;
-            border-bottom:3px dashed #f88;
+            border-bottom: 3px dashed #f88;
         }
 
         table tr * {
@@ -63,7 +63,7 @@
         </section>
         <section class="row">
             <section class="col-lg-3 order-lg-1">
-                <div class="box" style="position: sticky;top:0;">
+                <div class="box activeMenuWrap" style="position: sticky;top:0;">
                     <div id="activeMenu">
                         <h3 class="noList">MENU</h3>
                     </div>
@@ -76,7 +76,8 @@
             <section class="col-lg-9 order-lg-0">
                 <div class="box">
                     <h3>HTMLの基本</h3>
-                    HTML＝Hyper Text Markup Language（ハイパー・テキスト・マークアップ・ランゲージ）とは、文章をマークアップ（＝タグで囲うこと）して機能を持たせる、ウェブサイトの表示に適した形式の文章のことです。
+                    HTML＝Hyper Text Markup
+                    Language（ハイパー・テキスト・マークアップ・ランゲージ）とは、文章をマークアップ（＝タグで囲うこと）して機能を持たせる、ウェブサイトの表示に適した形式の文章のことです。
                     <h4>テキストの表示</h4>
                     テキストには、大きく分けてブロック要素・インライン要素の2種類があります。<br />
                     段落のような改行を伴う塊を作る場合はブロック要素、改行せず行内の一部を指定する場合はインライン要素を使用しましょう。
@@ -139,20 +140,20 @@
                             <td colspan="2">ここは2つ合体する</td>
                         </tr>
                     </table>
-                </div>
                     <pre class="prettyprint lang-html">
 &lt;span id="id0" class="class0"&gt;テキスト&lt;/span&gt;</pre>
 
-                <h4>CSSの準備（IDとクラス）</h4>
-                要素に「固有の名称＝ID」や、「グループの名称＝クラス」を設定することができます。<br/>
-                CSSで装飾を設定する際に、まとめて設定するときに便利です。<br/>
-                同じIDは、1つのページ内に1つしか設定することができませんが、クラスは複数設定することができます。
+                    <h4>CSSの準備（IDとクラス）</h4>
+                    要素に「固有の名称＝ID」や、「グループの名称＝クラス」を設定することができます。<br />
+                    CSSで装飾を設定する際に、まとめて設定するときに便利です。<br />
+                    同じIDは、1つのページ内に1つしか設定することができませんが、クラスは複数設定することができます。
+                </div>
 
                 <div class="box">
                     <h3>CSSの基本</h3>
                     CSS＝Cascading Style Sheets（カスケーディング・スタイル・シート）とは、HTMLで記載された文章を装飾するための命令のことです。
                     <h4>指定の方法</h4>
-                    原則、「適用対象{ 項目：内容; }」の形式で指定します。<br/>
+                    原則、「適用対象{ 項目：内容; }」の形式で指定します。<br />
                     また、指定を書く方法は、大きく3種類あります。
                     <h5>直接指定する</h5>
                     個別に指定したい場合に利用します。
@@ -162,7 +163,7 @@
 &lt;/p&gt;</pre>
                     <p style="border:1px solid #000;">みなさんこんにちは。私の名前は<span style="color:#f00;">国際太郎</span>です。</p>
                     <h5>まとめて指定（ページ内で）</h5>
-                    ページ内全体に適用したい場合に利用します。<br/>
+                    ページ内全体に適用したい場合に利用します。<br />
                     同一の要素に対し、複数の指定がある場合は、「より細かく指定した」ものが適用されます。
                     <pre class="prettyprint lang-html">
 &lt;style&gt;
@@ -181,21 +182,22 @@ span.blue{
 &lt;/span&gt;
 &lt;/p&gt;
 </pre>
-<style>
-#test_ame span{
-    color: #f00;
-    font-size: large;
-}
-#test_ame span.blue{
-    color: #00f;
-}
-</style>
-<p style="border:#000 1px solid" id="test_ame">
-    <span>今日の天気は<span class="blue">雨</span>です。</span>
-</p>
+                    <style>
+                        #test_ame span {
+                            color: #f00;
+                            font-size: large;
+                        }
+
+                        #test_ame span.blue {
+                            color: #00f;
+                        }
+                    </style>
+                    <p style="border:#000 1px solid" id="test_ame">
+                        <span>今日の天気は<span class="blue">雨</span>です。</span>
+                    </p>
 
                     <h5>まとめて指定（ページ外で）</h5>
-                    複数のページに適用したい場合に利用します。<br/>
+                    複数のページに適用したい場合に利用します。<br />
                     HTMLファイルとは別に、CSS（～～.css）ファイルを用意し、その中で設定します。
                     <pre class="prettyprint lang-html">
 &lt;html&gt;
@@ -206,8 +208,6 @@ span.blue{
 （本文）
 &lt;/body&gt;
 &lt;/html&gt;</pre>
-                </div>
-                <div class="box">
                     <h4>代表的な装飾</h4>
                     <h5>位置設定系</h5>
                     <dl>
@@ -228,10 +228,10 @@ span.blue{
                         <dt>color</dt>
                         <dd>文字色を設定できます。</dd>
                         <dt>font-size</dt>
-                        <dd>文字の大きさを指定します。<br/>
-                        数値の他に、「xx-small、x-small、small、medium、large、x-large、xx-large」などが指定できます。</dd>
+                        <dd>文字の大きさを指定します。<br />
+                            数値の他に、「xx-small、x-small、small、medium、large、x-large、xx-large」などが指定できます。</dd>
                         <dt>border</dt>
-                        <dd>罫線についての設定です。<br/>
+                        <dd>罫線についての設定です。<br />
                             太さ、種類、色の3つを指定します。（順序は自由）
                             <div>
                                 <span style="border:1px solid #f00;">border:1px solid #f00;</span>
@@ -248,8 +248,11 @@ span.blue{
                 <div class="box">
                     <h3>参考リンク集</h3>
                     <ul>
-                        <li><a href="https://zacky0922.github.io/KGsougaku/index0.html" target="_blank">古い方の総学サイト</a></li>
+                        <li><a href="http://codingtab.net/" target="_blank">Coding Tab</a><br />
+                            ブラウザ上でハイライト・プレビューができるエディタです。</li>
                         <li><a href="http://www.htmq.com/" target="_blank">HTMLクイックリファレンス</a></li>
+                        <li><a href="https://zacky0922.github.io/KGsougaku/index0.html" target="_blank">古い方の総学サイト</a>
+                        </li>
                     </ul>
                 </div>
             </section>

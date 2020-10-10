@@ -26,6 +26,7 @@ export class activeMenu {
         let idcount = 0;
         let nowLv = 3;  //メニュー化最上位のレベルを設定
         let sectionTop = new Array();   // ページトップからの位置を格納
+        let menuIndex = [0,0,0];
 
         // noListクラス以外のH3～H5要素を収集
         $("h3:not(.noList), h4:not(.noList), h5:not(.noList)").each(function (i) {
@@ -50,18 +51,20 @@ export class activeMenu {
             }
             //  現在のレベルとの差分だけリストタグを入れ子にする
             while (nowLv < lv) {
-                menuHTML += '<ol class="chapter">\n';
+                menuHTML += '<ol class="chapter activeMenu">\n';
                 nowLv++;
+                menuIndex[nowLv-3] = 0;
             }
             while (nowLv > lv) {
                 menuHTML += '</ol>\n';
                 nowLv--;
             }
             //  項目追加
+            menuIndex[lv - 3]++;
             menuHTML += '<li>' +
+                menuIndex.slice(0,lv-2).join(".")+" "+
                 '<a href="#' + this.id + '">' + this.innerHTML + '</a>' +
                 '</li>\n';
-
             //スクロール位置取得
             sectionTop[i] = $(this).offset().top;
         });
@@ -83,8 +86,5 @@ export class activeMenu {
                 }
             }
         });
-
-
     }
-
 }
