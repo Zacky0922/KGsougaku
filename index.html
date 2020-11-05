@@ -75,6 +75,32 @@
             </section>
             <section class="col-lg-9 order-lg-0">
                 <div class="box">
+                    <h3>WEBサイトの基本構造</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>言語</th>
+                                <th>内容・役割</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>HTML</th>
+                                <td>表示内容（文章）と基本的な構造（表、リスト、塊となる部分の指定など）を記述する。</td>
+                            </tr>
+                            <tr>
+                                <th>CSS</th>
+                                <td>表示内容の装飾をする。<br/>
+                                （色、サイズ、基本的なアニメーションなど）</td>
+                            </tr>
+                            <tr>
+                                <th>JavaScript</th>
+                                <td>ユーザーの入力などに対応した動きなどをつける。</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="box">
                     <h3>HTMLの基本</h3>
                     HTML＝Hyper Text Markup
                     Language（ハイパー・テキスト・マークアップ・ランゲージ）とは、文章をマークアップ（＝タグで囲うこと）して機能を持たせる、ウェブサイトの表示に適した形式の文章のことです。
@@ -244,6 +270,122 @@ span.blue{
                         <dt></dt>
                         <dd></dd>
                     </dl>
+                </div>
+                <div class="box">
+                    <h3>メディアクエリ</h3>
+                    大きな画面にズラーっと文章を書かれると読みづらいものです。<br/>
+                    横幅に限界を設けたり、2段組にしたりして、読みやすいレイアウトを作る必要があります。<br/>
+                    画面サイズごとに、どのような表示にするかを設定するために必要なのが、「メディアクエリ」です。
+                    
+                </div>
+                
+                <div class="box">
+                    <h3>Bootstrap</h3>
+                    HEAD内に以下のソースを書くことで、「Bootstrap」が使えるようになります。
+                    <pre class="prettyprint lang-html">
+&lt;link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"&gt;</pre>
+                    本文（BODY）では、クラスを利用して配置を設定します。
+                    <pre class="prettyprint lang-html">
+&lt;body&gt;
+    &lt;section class="container"&gt;
+        &lt;div class="row"&gt;
+            &lt;div class="col-3"&gt;
+                &lt;div class="box"&gt;テキスト１&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="col-9"&gt;
+                &lt;div class="box"&gt;テキスト２&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+&lt;/body&gt;</pre>
+                    <h4>グリッドシステム</h4>
+                    Bootstrapのグリッドシステムによって、1つのページを作成した際に、PC／Tablet／Mobileなど多種の端末に適した配置を切り替えることができます。
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>クラス名</th>
+                                    <th>意味</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th>.container</th>
+                                    <td>Bootstrapの枠となります。<br/>
+                                    その横幅は、次の表の通りとなります。</td>
+                                </tr>
+                                <tr>
+                                    <th>.row</th>
+                                    <td>container内の行（横方向の塊）をつくります。<br/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>.col-[画面サイズ]-[列数]</th>
+                                    <td>表示される1つ1つの列（column）になります。<br/>
+                                        画面サイズや列数を省略する場合もあります。<br/>
+                                        指定画面サイズのときに、何列分の表示をするか設定します。
+                                        <dl>
+                                            <dt>.col</dt>
+                                            <dd>同じ「.row」内の「.col」要素で均等な幅になります。</dd>
+                                            <dt>.col-[列数]</dt>
+                                            <dd>画面サイズによらず、表示する列数（横幅）を設定します。<br/>
+                                            標準的なレイアウトをこれで指定し、画面サイズを付加したクラスで特定画面サイズのときの表示を上書きすることもできます。</dd>
+                                            <dt>.col-[画面サイズ]</dt>
+                                            <dd>指定画面サイズのときに、均等幅で表示されます。</dd>
+                                        </dl>
+                                        <br/>
+                                        1行あたり12列が基準となっているので、列数はそれ以下の数字で設定すること。</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table>
+                            <caption>.containerの表示サイズ</caption>
+                            <thead>
+                                <tr>
+                                    <th>画面サイズ</th>
+                                    <th>画面幅</th>
+                                    <th>表示サイズ</th>
+                                    <th>想定される主な端末</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th>Extra small</th>
+                                    <th>576px未満</td>
+                                    <td>100%</td>
+                                    <td>スマートフォン<br/>ガラケー</td>
+                                </tr>
+                                <tr>
+                                    <th>Small／sm</th>
+                                    <th>576px以上</th>
+                                    <td>540px</td>
+                                    <td>スマートフォン<br/>タブレット</td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        Medium／md</th>
+                                        <th>768px以上
+                                    </th>
+                                    <td>
+                                        720px
+                                    </td>
+                                    <td>タブレット（縦画面）</td>
+                                </tr>
+                                <tr>
+                                    <th>Large／lg</th>
+                                    <th>992px以上</th>
+                                    <td>960px</td>
+                                    <td>タブレット・PC（縦画面）</td>
+                                </tr>
+                                <tr>
+                                    <th>Extra Large／xl</th>
+                                    <th>1200px以上</th>
+                                    <td>
+                                        1140px
+                                    </td>
+                                    <td>タブレット・PC（横画面）</td>
+                                </tr>
+                            </tbody>
+                        </table>
                 </div>
                 <div class="box">
                     <h3>参考リンク集</h3>
